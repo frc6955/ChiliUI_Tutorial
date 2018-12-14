@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        .header{
+            text-align: center;
+            background-color: rgba(38, 124, 200, 0.753);
+            height: 70px;
+            line-height: 70px;
+        }
+        .chart{
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+    <title>Python Flask Plotly example</title>
+</head>
+<body>
+    <div class="header">
+        <h2>Plotly Chart Demo</h2>
+    </div>
+    <div id="chart" class="chart">
+    </div>
+</body>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+    var graphs = {{graphJSON | safe}};
+    Plotly.plot('chart', graphs, {});
+</script>
+</html>
