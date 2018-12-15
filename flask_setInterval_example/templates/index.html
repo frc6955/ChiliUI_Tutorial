@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+        const api_url = 'http://localhost:5000/api/get_state';
+        var interval = setInterval(function() {
+            $.getJSON(api_url, function(result) {
+                console.log(result[0]['val']);
+                $('#state').html('<p>' + result[0]['val'] + '</p>');
+            });
+        }, 1000);
+    </script>
+</head>
+<body>
+    <h1>Plotly streaming test</h1>
+    <div id="state"> </div>
+</body>
+</html>
